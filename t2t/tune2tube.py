@@ -297,6 +297,8 @@ description (default: True).''',
                               in list(x.values())[0])
             for tag in metalist:
                 for key in tag:
+                    if "APIC" in key:
+                        continue
                     value = tag[key]
                     nice_key = self.tunetags.tag_lookup(key, True)
                     if '\n' in value:
